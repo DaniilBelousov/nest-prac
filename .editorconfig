@@ -1,6 +1,6 @@
 root = true
 
-[*.{js,json,ts,tsx}]
+[*.{js,json,ts,tsx,graphql}]
 indent_size = 2
 indent_style = space
 trim_trailing_whitespace = true
