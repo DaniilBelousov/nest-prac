@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { User } from '@prisma/client';
-import { NewUser } from 'src/graphql.schema';
+import { NewUser } from '../graphql.schema';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
