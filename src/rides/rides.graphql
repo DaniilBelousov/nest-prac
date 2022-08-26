@@ -1,0 +1,32 @@
+scalar DateTime
+
+type Ride {
+  id: ID!
+  toLocation: String!
+  fromLocation: String!
+  price: Int!
+  count: Int!
+  date: DateTime!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  userId: String!
+  user: User
+}
+
+input RideInput {
+  toLocation: String!
+  fromLocation: String!
+  price: Int!
+  count: Int!
+  date: DateTime!
+  userId: String!
+}
+
+type Query {
+  rides: [Ride!]!
+  ride(id: ID!): Ride
+}
+
+type Mutation {
+  rideCreate(input: RideInput): Ride!
+}
