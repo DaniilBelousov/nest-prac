@@ -1,14 +1,27 @@
+scalar DateTime
+scalar EmailAddress
+
 type User {
   id: ID!
   name: String!
   lastName: String!
-  comment: String!
+  email: EmailAddress!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  rides: [Ride!]
 }
 
-input NewUser {
+input UserCreate {
   name: String!
   lastName: String!
-  comment: String!
+  email: EmailAddress!
+}
+
+input UserUpdate {
+  id: ID!
+  name: String
+  lastName: String
+  email: EmailAddress
 }
 
 type Query {
@@ -17,5 +30,7 @@ type Query {
 }
 
 type Mutation {
-  userCreate(input: NewUser): User!
+  userCreate(input: UserCreate!): User!
+  userUpdate(input: UserUpdate!): User!
+  userDelete(id: ID!): User!
 }
